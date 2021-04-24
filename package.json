@@ -1,0 +1,17 @@
+{
+    "name": "devlounge-community",
+    "private": true,
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "devDependencies": {
+        "nodemon": "latest"
+    },
+    "dependencies": {
+        "discord.js": "^12.5.3",
+        "dotenv": "^8.2.0",
+        "knex": "^0.95.4"
+    }
+}

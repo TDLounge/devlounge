@@ -3,7 +3,7 @@ import { Client } from './Client.js';
 
 const client = new Client({
     embeds: {
-        colour: '#cf4a4a',
+        color: '#cf4a4a',
     },
 });
 

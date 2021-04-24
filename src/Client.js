@@ -13,9 +13,7 @@ export class Client extends DiscordClient {
 
     generateEmbed(data) {
         data = Object.assign(this.#options.embeds || {}, data);
-        return new MessageEmbed()
-            .setColor(data.colour)
-            .setDescription(data.description);
+        return new MessageEmbed(data);
     }
 
     async loadEvents(dir, props = {}) {
@@ -135,10 +133,12 @@ export class Client extends DiscordClient {
                     ...foundCommand.props,
                 });
 
+                console.log(this.generateEmbed(result));
+
                 if (result)
                     message.channel.send(
                         typeof result == 'object'
-                            ? result
+                            ? this.generateEmbed(result)
                             : this.generateEmbed({ description: result }),
                     );
             }

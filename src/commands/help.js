@@ -4,7 +4,9 @@ export const meta = {
     description: 'Get this menu',
 };
 
-export const run = async ({ client }) => ({
+export const run = async ({ client, dash }) => ({
     title: 'Command Help Menu',
-    description: client.commandHelp,
+    description: client.commandHelp
+        .map((x) => x.string(dash.has('show-admin')))
+        .join('\n'),
 });

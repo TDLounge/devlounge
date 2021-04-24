@@ -1,6 +1,9 @@
 import { Client as DiscordClient, Collection, MessageEmbed } from 'discord.js';
 import readdirRecursive from './util/readdirRecursive.js';
 import { basename, normalize, resolve } from 'path';
+import * as dash from 'dashargs';
+
+const parse = dash.default.parse;
 
 export class Client extends DiscordClient {
     #listening = false;
@@ -44,7 +47,7 @@ export class Client extends DiscordClient {
 
     async loadCommands(dir, props = []) {
         this.commands = new Collection();
-        this.commandHelp = '';
+        this.commandHelp = [];
 
         try {
             const files = readdirRecursive(resolve(dir))
@@ -81,7 +84,15 @@ export class Client extends DiscordClient {
                         `Unable to load a command; ID: ${meta.id}. No valid command array given`,
                     );
 
-                this.commandHelp += `${process.env.PREFIX}${meta.id} - ${meta.description}\n`;
+                this.commandHelp.push({
+                    ...meta,
+                    string: (admin = false) =>
+                        `${process.env.PREFIX}${
+                            admin && meta.adminSyntax
+                                ? meta.adminSyntax
+                                : meta.id || meta.syntax
+                        } - ${meta.description}`,
+                });
 
                 for (const command of meta.commands) {
                     if (this.commands.get(command))
@@ -132,6 +143,7 @@ export class Client extends DiscordClient {
                 const result = await foundCommand.run({
                     client: this,
                     args,
+                    dash: parse(args.join(' ')),
                     ...foundCommand.props,
                 });
 

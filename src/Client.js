@@ -44,6 +44,7 @@ export class Client extends DiscordClient {
 
     async loadCommands(dir, props = []) {
         this.commands = new Collection();
+        this.commandHelp = '';
 
         try {
             const files = readdirRecursive(resolve(dir))
@@ -69,7 +70,7 @@ export class Client extends DiscordClient {
 
             await Promise.all(commands);
 
-            for (const { meta, path, require } of commands) {
+            for (const { meta, require } of commands) {
                 if (!meta)
                     return console.log(
                         `Unable to load a command; ID: ${meta.id}. No meta given`,
@@ -79,6 +80,8 @@ export class Client extends DiscordClient {
                     return console.log(
                         `Unable to load a command; ID: ${meta.id}. No valid command array given`,
                     );
+
+                this.commandHelp += `${process.env.PREFIX}${meta.id} - ${meta.description}\n`;
 
                 for (const command of meta.commands) {
                     if (this.commands.get(command))

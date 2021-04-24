@@ -114,7 +114,6 @@ export class Client extends DiscordClient {
         this.prefix = process.env.PREFIX;
 
         this.on('message', async (message) => {
-            console.log('asd');
             if (message.partial) message = await message.fetch();
             if (message.author.bot || !message.content.startsWith(this.prefix))
                 return;
@@ -132,8 +131,6 @@ export class Client extends DiscordClient {
                     args,
                     ...foundCommand.props,
                 });
-
-                console.log(this.generateEmbed(result));
 
                 if (result)
                     message.channel.send(

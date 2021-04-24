@@ -143,6 +143,7 @@ export class Client extends DiscordClient {
                 const result = await foundCommand.run({
                     client: this,
                     args,
+                    message,
                     dash: parse(args.join(' ')),
                     ...foundCommand.props,
                 });

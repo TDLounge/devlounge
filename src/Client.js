@@ -15,7 +15,7 @@ export class Client extends DiscordClient {
     }
 
     generateEmbed(data) {
-        data = Object.assign(this.#options.embeds || {}, data);
+        data = { ...this.#options.embeds, ...data };
         return new MessageEmbed(data);
     }
 

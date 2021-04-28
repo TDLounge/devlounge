@@ -1,5 +1,5 @@
 import { run as emojis } from './emoji.js';
-import package from '../../package.json';
+import { getVersion } from '../util/version.js';
 
 export const meta = {
     id: 'information',
@@ -37,7 +37,7 @@ export const run = async ({ message }) => {
             },
             {
                 name: 'Bot',
-                value: `Version: ${package.version}`,
+                value: `Version: ${getVersion()}`,
             },
         ],
         thumbnail: {

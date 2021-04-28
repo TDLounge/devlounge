@@ -148,12 +148,12 @@ export class Client extends DiscordClient {
                     ...foundCommand.props,
                 });
 
-                if (result)
-                    message.channel.send(
-                        typeof result == 'object'
-                            ? this.generateEmbed(result)
-                            : this.generateEmbed({ description: result }),
-                    );
+                const embed =
+                    typeof result == 'object'
+                        ? this.generateEmbed(result)
+                        : this.generateEmbed({ description: result });
+
+                if (result) message.channel.send(embed);
             }
         });
     }

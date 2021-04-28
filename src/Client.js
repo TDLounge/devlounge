@@ -110,7 +110,7 @@ export class Client extends DiscordClient {
         } catch (e) {
             console.error(
                 new Error(
-                    'There has been an error loading events: ' + e.message,
+                    'There has been an error loading commands: ' + e.message,
                 ),
             );
         }

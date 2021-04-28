@@ -6,7 +6,7 @@ export const meta = {
     description: 'See the people that made this server what it is',
 };
 
-export const run = async ({ client }) => ({
+export const run = async () => ({
     title: 'Credits',
     description: [
         'Created and founded by <@282839711834177537>',

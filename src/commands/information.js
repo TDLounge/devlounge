@@ -1,4 +1,5 @@
 import { run as emojis } from './emoji.js';
+import { version } from '../../package.json';
 
 export const meta = {
     id: 'information',
@@ -33,6 +34,10 @@ export const run = async ({ message }) => {
                 value: `Owner: ${guild.owner}\nRegion: ${
                     guild.region[0].toUpperCase() + guild.region.slice(1)
                 }`,
+            },
+            {
+                name: 'Bot',
+                value: `Version: ${version}`,
             },
         ],
         thumbnail: {

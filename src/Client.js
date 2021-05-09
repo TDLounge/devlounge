@@ -129,8 +129,9 @@ export class Client extends DiscordClient {
 
         this.on('message', async (message) => {
             if (message.partial) message = await message.fetch();
-            if (message.author.bot || !message.content.startsWith(this.prefix))
-                return;
+            if (message.author.bot) return;
+            if (message.content.length <= 1) return;
+            if (!message.content.startsWith(this.prefix)) return;
 
             const command = message.content
                 .slice(this.prefix.length)

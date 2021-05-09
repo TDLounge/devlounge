@@ -1,3 +1,5 @@
+import { getXP } from '../util/xp.js';
+
 export const run = (...ctx) => xp(...ctx);
 
 const setupCooldown = (cooldown, id) => {
@@ -19,8 +21,7 @@ async function xp({ getDatabase }, message) {
         setupCooldown(xpCooldown, message.author.id);
     else return;
 
-    const data = await db.get(message.author.id);
-    const current = isNaN(data) ? 0 : data;
+    const current = await getXP(db, message.author.id);
     const xp = current + Math.floor(Math.random() * 30) + 15;
 
     db.set(message.author.id, xp);

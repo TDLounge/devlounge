@@ -45,7 +45,7 @@ export class Client extends DiscordClient {
         }
     }
 
-    async loadCommands(dir, props = []) {
+    async loadCommands(dir, props = {}) {
         this.commands = new Collection();
         this.commandHelp = [];
 
@@ -73,7 +73,7 @@ export class Client extends DiscordClient {
 
             await Promise.all(commands);
 
-            for (const { meta, require } of commands) {
+            for (const { meta, props, require } of commands) {
                 if (!meta)
                     return console.log(
                         `Unable to load a command; ID: ${meta.id}. No meta given`,
@@ -100,7 +100,7 @@ export class Client extends DiscordClient {
                             `Unable to load command; ID: ${meta.id}. Command word ${command} is taken`,
                         );
 
-                    this.commands.set(command, require);
+                    this.commands.set(command, { props, ...require });
 
                     console.log(
                         `Loaded command word ${command} for ${meta.id}`,
@@ -139,6 +139,7 @@ export class Client extends DiscordClient {
             const args = message.content.slice(command.length).split(' ');
 
             const foundCommand = this.commands.get(command);
+
             if (foundCommand) {
                 const result = await foundCommand.run({
                     client: this,

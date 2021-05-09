@@ -1,4 +1,4 @@
-import { getXP, getLevel } from '../util/xp.js';
+import { getLevel } from '../util/xp.js';
 
 export const meta = {
     id: 'level',
@@ -9,7 +9,7 @@ export const meta = {
 export const run = async ({ message, getDatabase }) => {
     const db = getDatabase('member');
 
-    const xp = await getXP(db, message.author.id);
+    const { xp } = (await getXP(db, message.author.id)) || { xp: 0 };
     const level = getLevel(xp);
 
     return {

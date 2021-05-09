@@ -1,5 +1,3 @@
-import { getCoins } from '../util/coins.js';
-
 export const meta = {
     id: 'balance',
     commands: ['bal', 'balance', 'coins'],
@@ -10,7 +8,7 @@ export const run = async ({ message, getDatabase }) => {
     const db = getDatabase('member');
 
     const user = message.mentions.users.first() || message.author;
-    const coins = await getCoins(db, user.id);
+    const { coins } = (await db.get(user.id)) || { coins: 0 };
 
     return {
         description: `<@${user.id}> ${

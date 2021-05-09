@@ -9,10 +9,11 @@ export const meta = {
 export const run = async ({ message, getDatabase }) => {
     const db = getDatabase('member');
 
-    const { xp } = (await db.get(message.author.id)) || { xp: 0 };
+    const user = message.mentions.users.first() || message.author;
+    const { xp } = (await db.get(user.id)) || { xp: 0 };
     const level = getLevel(xp);
 
     return {
-        description: `<@${message.author.id}> You are level ${level}, with ${xp} xp!`,
+        description: `<@${user.id}> You are level ${level}, with ${xp} xp!`,
     };
 };

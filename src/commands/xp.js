@@ -7,7 +7,7 @@ export const meta = {
 };
 
 export const run = async ({ message, getDatabase }) => {
-    const db = getDatabase('xp');
+    const db = getDatabase('member');
 
     const xp = await getXP(db, message.author.id);
     const level = getLevel(xp);

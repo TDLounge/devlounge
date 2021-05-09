@@ -17,9 +17,9 @@ const dbInformation = {
 
 const databases = new Map(
     Object.entries({
-        xp: new MyKV({
+        member: new MyKV({
             ...dbInformation,
-            table: 'xp',
+            table: 'member',
         }),
     }),
 );

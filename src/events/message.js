@@ -1,4 +1,4 @@
-import { getXP } from '../util/xp.js';
+import { parseXP } from '../util/xp.js';
 
 export const run = (...ctx) => xp(...ctx);
 
@@ -15,14 +15,15 @@ const xpCooldown = new Map();
 async function xp({ getDatabase }, message) {
     if (message.author.bot) return;
 
-    const db = getDatabase('xp');
+    const db = getDatabase('member');
 
     if (!xpCooldown.has(message.author.id))
         setupCooldown(xpCooldown, message.author.id);
     else return;
 
-    const current = await getXP(db, message.author.id);
+    const data = (await db.get(message.author.id)) || {};
+    const current = await parseXP(data.xp);
     const xp = current + Math.floor(Math.random() * 30) + 15;
 
-    db.set(message.author.id, xp);
+    db.set(message.author.id, { ...data, xp });
 }

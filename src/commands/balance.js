@@ -1,7 +1,7 @@
 export const meta = {
     id: 'balance',
     commands: ['bal', 'balance', 'coins'],
-    description: 'View your balance',
+    description: 'View your (or someone elses) balance',
 };
 
 export const run = async ({ message, getDatabase }) => {

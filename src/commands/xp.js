@@ -3,7 +3,7 @@ import { getLevel } from '../util/xp.js';
 export const meta = {
     id: 'level',
     commands: ['xp', 'level'],
-    description: 'View your level and xp',
+    description: 'View your (or someone elses) level and xp',
 };
 
 export const run = async ({ message, getDatabase }) => {

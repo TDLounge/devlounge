@@ -137,7 +137,7 @@ export class Client extends DiscordClient {
                 .slice(this.prefix.length)
                 .match(/^[\w\d]+/gi)[0];
 
-            const args = message.content.slice(command.length).split(' ');
+            const args = message.content.split(' ').slice(1);
 
             const foundCommand = this.commands.get(command);
 

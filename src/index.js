@@ -1,4 +1,4 @@
-import dotenv from 'dotenv/config.js';
+import dotenv from 'dotenv/config';
 import { Client } from './Client.js';
 
 const client = new Client({

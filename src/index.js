@@ -25,6 +25,10 @@ const databases = new Map(
             ...dbInformation,
             table: 'tags',
         }),
+        shop: new MyKV({
+            ...dbInformation,
+            table: 'shop',
+        }),
     }),
 );
 

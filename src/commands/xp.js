@@ -1,4 +1,4 @@
-import { getLevel } from '../util/xp.js';
+import { number } from '../util/assert.js';
 
 export const meta = {
     id: 'level',
@@ -10,8 +10,9 @@ export const run = async ({ message, getDatabase }) => {
     const db = getDatabase('member');
 
     const user = message.mentions.users.first() || message.author;
-    const { xp } = (await db.get(user.id)) || { xp: 0 };
-    const level = getLevel(xp);
+    const data = await db.get(user.id);
+    const xp = number(data.xp);
+    const level = Math.floor(xp / 100);
 
     return {
         description: `<@${user.id}> You are level ${level}, with ${xp} xp!`,

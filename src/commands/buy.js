@@ -1,3 +1,5 @@
+import { number, array } from '../util/assert.js';
+
 export const meta = {
     id: 'buy',
     commands: ['buy'],
@@ -14,13 +16,10 @@ export const run = async ({ message, args, getDatabase }) => {
     if (!data) return 'Unable to find that item, it is case sensitive!';
 
     const udb = getDatabase('member');
-    const udata = (await udb.get(message.author.id)) || {
-        coins: 0,
-        purchased: [],
-    };
+    const udata = (await udb.get(message.author.id)) || {};
 
-    const coins = udata.coins || 0;
-    const purchased = udata.purchased || [];
+    const coins = number(udata.coins);
+    const purchased = array(udata.purchased);
     const { price, role } = data;
 
     if (purchased.includes(item)) return 'You already own this';

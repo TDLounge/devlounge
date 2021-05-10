@@ -1,5 +1,4 @@
-import { parseCoins } from '../util/coins.js';
-import { parseXP } from '../util/xp.js';
+import { number } from '../util/assert.js';
 
 export const run = (...ctx) => {
     xp(...ctx);
@@ -24,7 +23,7 @@ async function xp({ getDatabase }, message) {
     } else return;
 
     const data = (await db.get(message.author.id)) || {};
-    const current = await parseXP(data.xp);
+    const current = number(data.xp);
     const xp = current + Math.floor(Math.random() * 30) + 15;
 
     db.set(message.author.id, { ...data, xp });
@@ -44,7 +43,7 @@ async function coins({ getDatabase, client }, message) {
     } else return;
 
     const data = (await db.get(message.author.id)) || {};
-    const current = await parseCoins(data.xp);
+    const current = number(data.coins);
     const random = Math.floor(Math.random() * 11) + 1;
     const coins = current + random;
 

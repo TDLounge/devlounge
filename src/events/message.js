@@ -4,6 +4,7 @@ import { parseXP } from '../util/xp.js';
 export const run = (...ctx) => {
     xp(...ctx);
     coins(...ctx);
+    tags(...ctx);
 };
 
 const xpCooldown = new Map();
@@ -63,4 +64,27 @@ async function coins({ getDatabase, client }, message) {
     );
 
     m.delete({ timeout: 3000 });
+}
+
+async function tags({ getDatabase, client }, message) {
+    if (message.author.bot) return;
+    if (!message.content.startsWith('?')) return;
+
+    const db = getDatabase('tags');
+
+    const tag = message.content.slice(1).split(' ')[0];
+    const data = await db.get(tag);
+
+    if (!data)
+        return message.channel.send(
+            client.generateEmbed({
+                description: "That tag doesn't exist",
+            }),
+        );
+
+    message.channel.send(
+        client.generateEmbed({
+            description: data.content,
+        }),
+    );
 }

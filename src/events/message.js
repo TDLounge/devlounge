@@ -9,7 +9,7 @@ export const run = (...ctx) => {
 const xpCooldown = new Map();
 const coinsCooldown = new Map();
 
-async function xp({ getDatabase }, message) {
+async function xp({ getDatabase, client }, message) {
     if (message.author.bot) return;
 
     const db = getDatabase('member');
@@ -26,7 +26,18 @@ async function xp({ getDatabase }, message) {
     const current = number(data.xp);
     const xp = current + Math.floor(Math.random() * 30) + 15;
 
-    db.set(message.author.id, { ...data, xp });
+    await db.set(message.author.id, { ...data, xp });
+
+    const prevLevel = Math.floor(current / 100);
+    const newLevel = Math.floor(xp / 100);
+
+    if (newLevel > prevLevel) {
+        message.channel.send(
+            client.generateEmbed({
+                description: `<@${message.author.id}> you just leveled up! You are now level ${newLevel}`,
+            }),
+        );
+    }
 }
 
 async function coins({ getDatabase, client }, message) {

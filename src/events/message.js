@@ -1,4 +1,5 @@
 import { number } from '../util/assert.js';
+import { randomInteger } from '../util/random.js';
 
 export const run = (...ctx) => {
     xp(...ctx);
@@ -24,7 +25,7 @@ async function xp({ getDatabase, client }, message) {
 
     const data = (await db.get(message.author.id)) || {};
     const current = number(data.xp);
-    const xp = current + Math.floor(Math.random() * 30) + 15;
+    const xp = current + randomInteger(5, 20);
 
     await db.set(message.author.id, { ...data, xp });
 

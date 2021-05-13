@@ -4,7 +4,7 @@ export const meta = {
     description: 'View the leaderboard for xp!',
 };
 
-export const run = async ({ message, getDatabase }) => {
+export const run = async ({ getDatabase }) => {
     const db = getDatabase('member');
 
     const entries = await db.entries();

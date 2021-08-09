@@ -2,13 +2,12 @@
     "name": "devlounge-community",
     "version": "3.0.0",
     "private": true,
-    "main": "dist/index.js",
+    "main": "dist/src/index.js",
     "scripts": {
         "dev": "rimraf dist && run-p dev:*",
         "dev:tsc": "tsc -w",
         "dev:nodemon": "nodemon .",
-        "build": "rimraf dist && tsc",
-        "postinstall": "rimraf dist && tsc"
+        "build": "rimraf dist && tsc"
     },
     "devDependencies": {
         "@types/node": "^16.4.13",

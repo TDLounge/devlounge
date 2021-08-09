@@ -16,7 +16,7 @@ const jelly = new JellyCommands(client, {
     },
 });
 
-jelly.slashCommands.load('dist/slashCommands');
+jelly.slashCommands.load('dist/src/slashCommands');
 
 client.login(process.env.TOKEN);
 

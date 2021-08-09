@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "lib": ["ES2020"],
+        "moduleResolution": "node",
+
+        "strict": true,
+        "declaration": false,
+        "removeComments": true,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "allowJs": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["dist"]
+}

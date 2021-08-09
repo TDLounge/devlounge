@@ -2,13 +2,21 @@
     "name": "devlounge-community",
     "version": "3.0.0",
     "private": true,
-    "main": "src/index.js",
+    "main": "dist/index.js",
     "type": "module",
     "scripts": {
-        "dev": "nodemon src/index.js"
+        "dev": "rimraf dist && run-p dev:*",
+        "dev:tsc": "tsc -w",
+        "dev:nodemon": "nodemon .",
+        "build": "rimraf dist && tsc",
+        "postinstall": "rimraf dist && tsc"
     },
     "devDependencies": {
-        "nodemon": "latest"
+        "@types/node": "^16.4.13",
+        "nodemon": "latest",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.3.5"
     },
     "dependencies": {
         "discord.js": "^13.0.1",

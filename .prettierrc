@@ -1,6 +1,6 @@
 {
     "singleQuote": true,
-    "quotePros": "as-needed",
+    "quoteProps": "as-needed",
     "trailingComma": "all",
     "bracketSpacing": true,
     "arrowParens": "always",

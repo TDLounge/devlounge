@@ -16,7 +16,7 @@ export default createSlashCommand('credits', {
     global: true,
 
     run: async ({ interaction }) =>
-        interaction.followUp({
+        interaction.reply({
             embeds: [
                 {
                     title: 'Credits',

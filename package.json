@@ -11,9 +11,7 @@
         "nodemon": "latest"
     },
     "dependencies": {
-        "dashargs": "^4.1.3",
-        "discord.js": "^12.5.3",
-        "dotenv": "^9.0.1",
-        "mykv": "^1.0.1"
+        "discord.js": "^13.0.1",
+        "dotenv": "^10.0.0"
     }
 }

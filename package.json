@@ -5,7 +5,7 @@
     "main": "dist/src/index.js",
     "scripts": {
         "dev": "rimraf dist && run-p dev:*",
-        "dev:tsc": "tsc -w",
+        "dev:tsc": "tsc -w --preserveWatchOutput",
         "dev:nodemon": "nodemon .",
         "build": "rimraf dist && tsc"
     },

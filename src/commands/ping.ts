@@ -1,6 +1,7 @@
-import { createSlashCommand } from 'jellycommands';
+import { command } from 'jellycommands';
 
-export default createSlashCommand('ping', {
+export default command({
+    name: 'ping',
     description: 'Ping pong!',
 
     global: true,

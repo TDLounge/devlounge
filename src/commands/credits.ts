@@ -1,4 +1,4 @@
-import { createSlashCommand } from 'jellycommands';
+import { command } from 'jellycommands';
 import pkg from '../../package.json';
 
 const credits = `
@@ -10,7 +10,8 @@ Shop & Tag system inspired by [Sourcebot](https://github.com/TheSourceCodeLLC/So
 Bot version: v${pkg.version}
 `;
 
-export default createSlashCommand('credits', {
+export default command({
+    name: 'credits',
     description: 'Get devlounge credits',
 
     global: true,

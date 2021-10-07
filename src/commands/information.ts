@@ -1,9 +1,10 @@
-import { createSlashCommand } from 'jellycommands';
+import { command } from 'jellycommands';
 import pkg from '../../package.json';
 
 import type { Guild } from 'discord.js';
 
-export default createSlashCommand('information', {
+export default command({
+    name: 'information',
     description: 'Get information about the server',
 
     global: true,

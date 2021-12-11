@@ -7,7 +7,7 @@ const jelly = new JellyCommands({
         intents: [Intents.FLAGS.GUILDS],
     },
 
-    commands: ['dist/src/commands'],
+    commands: ['dist/commands'],
 
     messages: {
         unknownCommand: {

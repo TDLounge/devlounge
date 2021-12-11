@@ -2,7 +2,8 @@
     "name": "devlounge-community",
     "version": "3.0.0",
     "private": true,
-    "main": "dist/src/index.js",
+    "type": "module",
+    "main": "dist/index.js",
     "scripts": {
         "dev": "rimraf dist && run-p dev:*",
         "dev:tsc": "tsc -w --preserveWatchOutput",

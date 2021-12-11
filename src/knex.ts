@@ -18,7 +18,9 @@ export default async () => {
         acquireConnectionTimeout: 2500,
     });
 
-    await userSchema(db);
+    try {
+        await userSchema(db);
+    } catch {}
 
     return db;
 };

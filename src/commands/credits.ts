@@ -1,6 +1,7 @@
 import { command } from 'jellycommands';
-// import pkg from '../../package.json';
-const pkg = {};
+import { readFileSync } from 'fs';
+
+const { version } = JSON.parse(readFileSync('package.json', 'utf-8'));
 
 const credits = `
 Created and founded by <@282839711834177537>
@@ -8,7 +9,7 @@ All systems coded by <@282839711834177537>
 Logo and art made by <@787002534145294336>
 Shop & Tag system inspired by [Sourcebot](https://github.com/TheSourceCodeLLC/Source)
 
-Bot version: v${pkg.version}
+Bot version: v${version}
 `;
 
 export default command({

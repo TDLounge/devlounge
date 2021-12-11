@@ -1,7 +1,8 @@
 import { command } from 'jellycommands';
-// import pkg from '../../package.jsone';
-const pkg = {};
 import type { Guild } from 'discord.js';
+import { readFileSync } from 'fs';
+
+const { version } = JSON.parse(readFileSync('package.json', 'utf-8'));
 
 export default command({
     name: 'information',
@@ -45,7 +46,7 @@ export default command({
                         },
                         {
                             name: 'Bot',
-                            value: `Version: ${pkg.version}`,
+                            value: `Version: ${version}`,
                         },
                     ],
                     thumbnail: {

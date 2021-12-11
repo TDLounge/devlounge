@@ -1,8 +1,11 @@
 import 'dotenv/config';
 import { JellyCommands } from 'jellycommands';
 import { Intents } from 'discord.js';
+import knex from './knex.js';
 
-const jelly = new JellyCommands({
+const db = await knex();
+
+const client = new JellyCommands({
     clientOptions: {
         intents: [Intents.FLAGS.GUILDS],
     },
@@ -10,17 +13,13 @@ const jelly = new JellyCommands({
     commands: ['dist/commands'],
     events: 'dist/events',
 
-    messages: {
-        unknownCommand: {
-            embeds: [{ description: 'Unknown Command', color: '#cf4a4a' }],
-        },
+    props: {
+        db,
     },
 
     dev: {
         guilds: ['663140687591768074'],
     },
-
-    debug: true,
 });
 
-jelly.login(process.env.TOKEN);
+client.login(process.env.TOKEN);

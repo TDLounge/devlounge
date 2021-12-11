@@ -20,6 +20,8 @@
     "dependencies": {
         "discord.js": "^13.0.1",
         "dotenv": "^10.0.0",
-        "jellycommands": "^1.0.0-12"
+        "jellycommands": "^1.0.0-12",
+        "knex": "^0.95.14",
+        "mysql": "^2.18.1"
     }
 }

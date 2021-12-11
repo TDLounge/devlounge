@@ -19,6 +19,6 @@
     "dependencies": {
         "discord.js": "^13.0.1",
         "dotenv": "^10.0.0",
-        "jellycommands": "^1.0.0-6"
+        "jellycommands": "^1.0.0-12"
     }
 }

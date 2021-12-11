@@ -8,6 +8,7 @@ const jelly = new JellyCommands({
     },
 
     commands: ['dist/commands'],
+    events: 'dist/events',
 
     messages: {
         unknownCommand: {

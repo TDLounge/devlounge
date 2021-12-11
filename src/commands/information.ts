@@ -1,6 +1,6 @@
 import { command } from 'jellycommands';
-import pkg from '../../package.json';
-
+// import pkg from '../../package.jsone';
+const pkg = {};
 import type { Guild } from 'discord.js';
 
 export default command({

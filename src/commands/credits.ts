@@ -1,5 +1,6 @@
 import { command } from 'jellycommands';
-import pkg from '../../package.json';
+// import pkg from '../../package.json';
+const pkg = {};
 
 const credits = `
 Created and founded by <@282839711834177537>

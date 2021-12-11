@@ -7,7 +7,7 @@ const db = await knex();
 
 const client = new JellyCommands({
     clientOptions: {
-        intents: [Intents.FLAGS.GUILDS],
+        intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     },
 
     commands: ['dist/commands'],

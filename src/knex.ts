@@ -1,5 +1,7 @@
 import knex from 'knex';
 
+import userSchema from './db/user.js';
+
 export default async () => {
     const db = knex({
         client: 'mysql',
@@ -16,7 +18,7 @@ export default async () => {
         acquireConnectionTimeout: 2500,
     });
 
-    await db.raw('SELECT 1+1 AS RESULT');
+    await userSchema(db);
 
     return db;
 };

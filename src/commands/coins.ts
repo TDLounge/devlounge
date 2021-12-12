@@ -15,7 +15,6 @@ export default command({
     ],
 
     global: true,
-    dev: true,
 
     defer: true,
 

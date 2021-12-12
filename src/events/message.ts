@@ -10,6 +10,8 @@ export default event({
     name: 'messageCreate',
 
     run: async ({ client }, message) => {
+        if (message.author.bot) return;
+
         // prettier-ignore
         if (cooldown.has(message.author.id) && cooldown.get(message.author.id) > Date.now()) return;
 

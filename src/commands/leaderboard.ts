@@ -8,7 +8,6 @@ export default command({
 
     global: true,
     defer: true,
-    dev: true,
 
     run: async ({ interaction, client }) => {
         const db = client.props.get<Knex>('db');

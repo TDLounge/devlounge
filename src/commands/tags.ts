@@ -23,7 +23,10 @@ export default command({
         const name = interaction.options.getString('tag', true);
         const db = client.props.get<Knex>('db');
 
-        const tag = await db('tag').select('content').where({ name }).first();
+        const tag = await db('tag')
+            .select<{ content: string }>('content')
+            .where({ name })
+            .first();
 
         if (!tag)
             return void interaction.followUp({

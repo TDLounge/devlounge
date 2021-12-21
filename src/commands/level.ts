@@ -1,3 +1,4 @@
+import { toLevel } from '../utils/levels.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -29,9 +30,10 @@ export default command({
             .where({ id: userId })
             .first();
 
-        // TODO gen level
+        console.log(user);
+
         // prettier-ignore
-        const description = `<@${userId}> ${userId == interaction.user.id ? 'you have' : 'has'} ${user?.xp || 0} xp`;
+        const description = `<@${userId}> ${userId == interaction.user.id ? 'you are' : 'is'} level ${toLevel(user.xp)}`;
 
         interaction.followUp({
             embeds: [

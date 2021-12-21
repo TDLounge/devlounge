@@ -23,7 +23,7 @@ export default event({
             .first();
 
         const coins = ran(4, 18);
-        const xp = ran(6, 32);
+        const xp = ran(14, 26);
 
         if (user) {
             await db('user')

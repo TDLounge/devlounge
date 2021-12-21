@@ -17,7 +17,6 @@ export default command({
 
     global: true,
     defer: true,
-    dev: true,
 
     run: async ({ interaction, client }): Promise<void> => {
         const name = interaction.options.getString('tag', true);

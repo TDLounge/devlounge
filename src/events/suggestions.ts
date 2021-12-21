@@ -1,6 +1,6 @@
 import { event } from 'jellycommands';
 
-const suggestionChannelIds = ['767854644813627454', '894932281670647879'];
+const suggestionChannelIds = ['767854644813627454'];
 
 export default event({
     name: 'messageCreate',

@@ -14,7 +14,7 @@ Commands:
 -   [ ] pay
 -   [x] ping
 -   [ ] shop
--   [ ] tags
+-   [x] tags
 -   [x] level
 
 Features:

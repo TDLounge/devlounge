@@ -7,13 +7,13 @@ Will write a readme at some point
 Commands:
 
 -   [x] coins
--   [ ] buy
+-   [x] buy
 -   [x] credits
 -   [x] information
 -   [x] leaderboard
 -   [x] pay
 -   [x] ping
--   [ ] shop
+-   [x] shop
 -   [x] tags
 -   [x] level
 

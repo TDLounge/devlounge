@@ -1,3 +1,4 @@
+import { toLevel } from '../utils/levels.js';
 import { event } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -18,7 +19,7 @@ export default event({
         const db = client.props.get<Knex>('db');
 
         const user = await db('user')
-            .select('coins', 'xp')
+            .select<{ coins: number; xp: number }>('coins', 'xp')
             .where({ id: message.author.id })
             .first();
 
@@ -29,6 +30,20 @@ export default event({
             await db('user')
                 .update({ coins: user.coins + coins, xp: user.xp + xp })
                 .where({ id: message.author.id });
+
+            const currentLevel = toLevel(user.xp);
+            const newLevel = toLevel(xp + user.xp);
+
+            if (newLevel > currentLevel) {
+                message.reply({
+                    embeds: [
+                        {
+                            color: '#cf4a4a',
+                            description: `${message.author.toString()} is now level ${newLevel}!`,
+                        },
+                    ],
+                });
+            }
         } else {
             await db('user').insert({ id: message.author.id, coins, xp });
         }

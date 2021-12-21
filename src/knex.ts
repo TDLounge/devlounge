@@ -1,5 +1,6 @@
 import knex from 'knex';
 
+import shopSchema from './db/shop.js';
 import userSchema from './db/user.js';
 import tagSchema from './db/tag.js';
 
@@ -20,6 +21,7 @@ export default async () => {
     });
 
     try {
+        await shopSchema(db);
         await userSchema(db);
         await tagSchema(db);
     } catch {}

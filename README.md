@@ -21,4 +21,4 @@ Features:
 
 -   [x] Give Coins
 -   [x] Give XP
--   [ ] Suggestions
+-   [x] Suggestions

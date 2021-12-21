@@ -10,7 +10,7 @@ Commands:
 -   [ ] buy
 -   [x] credits
 -   [x] information
--   [ ] leaderboard
+-   [x] leaderboard
 -   [ ] pay
 -   [x] ping
 -   [ ] shop
@@ -21,3 +21,4 @@ Features:
 
 -   [x] Give Coins
 -   [x] Give XP
+-   [ ] Suggestions

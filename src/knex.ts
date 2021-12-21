@@ -1,6 +1,7 @@
 import knex from 'knex';
 
 import userSchema from './db/user.js';
+import tagSchema from './db/tag.js';
 
 export default async () => {
     const db = knex({
@@ -20,6 +21,7 @@ export default async () => {
 
     try {
         await userSchema(db);
+        await tagSchema(db);
     } catch {}
 
     return db;

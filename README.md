@@ -11,7 +11,7 @@ Commands:
 -   [x] credits
 -   [x] information
 -   [x] leaderboard
--   [ ] pay
+-   [x] pay
 -   [x] ping
 -   [ ] shop
 -   [x] tags

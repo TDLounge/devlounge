@@ -27,7 +27,8 @@ export default command({
         );
 
         const xpBoard = xpData.map(
-            ({ id, xp }, i) => `${i + 1}) <@${id}> \`${xp}\` (Level ${toLevel(xp)})`,
+            ({ id, xp }, i) =>
+                `${i + 1}) <@${id}> \`${xp}\` (Level ${toLevel(xp)})`,
         );
 
         interaction.followUp({
@@ -35,8 +36,11 @@ export default command({
                 {
                     color: '#cf4a4a',
                     fields: [
-                        { name: 'Coins Leaderboard', value: coinBoard.join('\n') },
-                        { name: 'XP Leaderboard', value: xpBoard.join('\n' },
+                        {
+                            name: 'Coins Leaderboard',
+                            value: coinBoard.join('\n'),
+                        },
+                        { name: 'XP Leaderboard', value: xpBoard.join('\n') },
                     ],
                 },
             ],

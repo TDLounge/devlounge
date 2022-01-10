@@ -30,8 +30,6 @@ export default command({
     global: true,
     defer: true,
 
-    dev: true,
-
     run: async ({ interaction, client }): Promise<void> => {
         const subCommand = interaction.options.getSubcommand(true);
         const db = client.props.get<Knex>('db');

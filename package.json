@@ -3,6 +3,9 @@
     "private": true,
     "scripts": {
         "community": "pnpm run dev -r --filter community",
-        "welcomer": "pnpm run dev -r --filter welcomer"
+        "welcomer": "pnpm run dev -r --filter welcomer",
+
+        "start:community": "pnpm run start -r --filter community",
+        "start:welcomer": "pnpm run start -r --filter welcomer"
     }
 }

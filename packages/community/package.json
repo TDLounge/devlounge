@@ -1,0 +1,27 @@
+{
+    "name": "devlounge-community",
+    "version": "3.0.0",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "rimraf dist && run-p dev:*",
+        "dev:tsc": "tsc -w --preserveWatchOutput",
+        "dev:nodemon": "nodemon .",
+        "build": "rimraf dist && tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^16.4.13",
+        "nodemon": "latest",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "discord.js": "^13.0.1",
+        "dotenv": "^10.0.0",
+        "jellycommands": "^1.0.0-12",
+        "knex": "^0.95.14",
+        "mysql": "^2.18.1"
+    }
+}

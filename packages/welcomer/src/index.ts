@@ -3,7 +3,7 @@ import { JellyCommands } from 'jellycommands';
 import { Intents } from 'discord.js';
 
 const client = new JellyCommands({
-    events: 'src/events',
+    events: './src/events',
 
     clientOptions: {
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS],

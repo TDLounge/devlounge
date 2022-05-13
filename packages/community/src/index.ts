@@ -18,6 +18,7 @@ const client = new JellyCommands({
     },
 
     dev: {
+        global: process.env['NODE_ENV'] == 'development',
         guilds: ['663140687591768074'],
     },
 });

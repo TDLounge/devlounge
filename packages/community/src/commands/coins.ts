@@ -1,16 +1,15 @@
-import { toLevel } from '../utils/levels.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
 export default command({
-    name: 'level',
-    description: 'Check yours or others level',
+    name: 'coins',
+    description: 'Check yours or others coins',
 
     options: [
         {
             name: 'user',
-            description: 'The user whos level you want to check',
-            type: '6',
+            description: 'The user whos coins you want to check',
+            type: 'USER',
             required: false,
         },
     ],
@@ -22,18 +21,15 @@ export default command({
     run: async ({ interaction, client }) => {
         const userId =
             interaction.options.getUser('user')?.id ?? interaction.user.id;
-
         const db = client.props.get<Knex>('db');
 
         const user = await db('user')
-            .select('xp')
+            .select('coins')
             .where({ id: userId })
             .first();
 
-        console.log(user);
-
         // prettier-ignore
-        const description = `<@${userId}> ${userId == interaction.user.id ? 'you are' : 'is'} level ${toLevel(user.xp)}`;
+        const description = `<@${userId}> ${userId == interaction.user.id ? 'you have' : 'has'} ${user?.coins || 0} coins`;
 
         interaction.followUp({
             embeds: [

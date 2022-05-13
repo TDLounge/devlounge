@@ -10,7 +10,7 @@ export default command({
         {
             name: 'user',
             description: 'The user whos level you want to check',
-            type: '6',
+            type: 'USER',
             required: false,
         },
     ],

@@ -10,7 +10,7 @@ importers:
       '@types/node': ^16.4.13
       discord.js: ^13.0.1
       dotenv: ^10.0.0
-      jellycommands: ^1.0.0-12
+      jellycommands: ^1.0.0-next.23
       knex: ^0.95.14
       mysql: ^2.18.1
       nodemon: ^2.0.16
@@ -19,7 +19,7 @@ importers:
     dependencies:
       discord.js: 13.6.0
       dotenv: 10.0.0
-      jellycommands: 1.0.0-next.15
+      jellycommands: 1.0.0-next.23
       knex: 0.95.15_mysql@2.18.1
       mysql: 2.18.1
     devDependencies:
@@ -336,12 +336,6 @@ packages:
   /delayed-stream/1.0.0:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
     engines: {node: '>=0.4.0'}
-    dev: false
-
-  /discord-api-types/0.25.2:
-    resolution: {integrity: sha512-O243LXxb5gLLxubu5zgoppYQuolapGVWPw3ll0acN0+O8TnPUE2kFp9Bt3sTRYodw8xFIknOVxjSeyWYBpVcEQ==}
-    engines: {node: '>=12'}
-    deprecated: No longer supported. Install the latest release!
     dev: false
 
   /discord-api-types/0.26.1:
@@ -856,11 +850,11 @@ packages:
     resolution: {integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=}
     dev: false
 
-  /jellycommands/1.0.0-next.15:
-    resolution: {integrity: sha512-FID657B9FnIdGkHI1UhamOkVoExCOrKVSLS8oMHKYdScW5qOYhUezfHG4jKcHY2HBULEbLgcu++NMUIapjYAOA==}
+  /jellycommands/1.0.0-next.23:
+    resolution: {integrity: sha512-Y8Of0sett51BLzbLgS077ND3YKkRCENBFnQsGnsFH8qWBd9tUFN1Qjm8ZwO+dDgy99hiRqo00epktUpkx7RS9Q==}
     dependencies:
       axios: 0.24.0
-      discord-api-types: 0.25.2
+      discord-api-types: 0.26.1
       ghoststools: 0.6.3
       joi: 17.6.0
     transitivePeerDependencies:

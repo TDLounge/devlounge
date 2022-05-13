@@ -9,7 +9,7 @@ export default command({
         {
             name: 'user',
             description: 'The user whos coins you want to check',
-            type: '6',
+            type: 'USER',
             required: false,
         },
     ],

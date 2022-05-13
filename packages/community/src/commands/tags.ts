@@ -1,4 +1,3 @@
-import { ApplicationCommandOptionTypes } from 'discord.js/typings/enums';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -10,17 +9,17 @@ export default command({
         {
             name: 'view',
             description: 'View all the tags',
-            type: ApplicationCommandOptionTypes['SUB_COMMAND'],
+            type: 'SUB_COMMAND',
         },
         {
             name: 'get',
             description: 'Get a tag by name',
-            type: ApplicationCommandOptionTypes['SUB_COMMAND'],
+            type: 'SUB_COMMAND',
             options: [
                 {
                     name: 'tag',
                     description: 'the tag',
-                    type: ApplicationCommandOptionTypes.STRING,
+                    type: 'STRING',
                     required: true,
                 },
             ],

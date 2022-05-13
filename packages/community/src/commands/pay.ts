@@ -1,4 +1,3 @@
-import { ApplicationCommandOptionTypes } from 'discord.js/typings/enums';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -10,13 +9,13 @@ export default command({
         {
             name: 'amount',
             description: 'Amount to send',
-            type: ApplicationCommandOptionTypes.INTEGER,
+            type: 'INTEGER',
             required: true,
         },
         {
             name: 'recipient',
             description: 'User to send coins to',
-            type: ApplicationCommandOptionTypes.USER,
+            type: 'USER',
             required: true,
         },
     ],

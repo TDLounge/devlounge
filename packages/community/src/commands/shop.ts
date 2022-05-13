@@ -1,4 +1,3 @@
-import { ApplicationCommandOptionTypes } from 'discord.js/typings/enums';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -17,18 +16,18 @@ export default command({
         {
             name: 'view',
             description: 'View all items for sale',
-            type: ApplicationCommandOptionTypes.SUB_COMMAND,
+            type: 'SUB_COMMAND',
         },
         {
             name: 'buy',
             description: 'Buy an item from the shop',
-            type: ApplicationCommandOptionTypes.SUB_COMMAND,
+            type: 'SUB_COMMAND',
 
             options: [
                 {
                     name: 'number',
                     description: 'The number (id) of the item',
-                    type: ApplicationCommandOptionTypes.INTEGER,
+                    type: 'INTEGER',
                     required: true,
                 },
             ],

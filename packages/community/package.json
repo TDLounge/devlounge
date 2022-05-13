@@ -9,16 +9,16 @@
         "start": "tsm ."
     },
     "devDependencies": {
-        "@types/node": "^16.4.13",
+        "@types/node": "^16.11.35",
         "nodemon": "^2.0.16",
         "tsm": "^2.2.1",
-        "typescript": "^4.3.5"
+        "typescript": "^4.6.4"
     },
     "dependencies": {
-        "discord.js": "^13.0.1",
+        "discord.js": "^13.6.0",
         "dotenv": "^10.0.0",
         "jellycommands": "^1.0.0-next.23",
-        "knex": "^0.95.14",
+        "knex": "^0.95.15",
         "mysql": "^2.18.1"
     }
 }

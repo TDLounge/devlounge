@@ -1,20 +1,11 @@
-# Create JellyCommands
+# Welcomer
 
-This project was created with `npm init jellycommands`!
+[![Badge](https://img.shields.io/discord/755788441161302136?color=blue&label=Join%20the%20Discord&style=for-the-badge)](https://discord.gg/2Vd4wAjJnm)
 
-# Get Started
+This bot sends random messages when a user join/leaves the server
 
-You need to make sure you have your `.env` file, this is where you will put your discord bot token. You can see how that should look from the `.env.example` file.
+# Stack
 
-```bash
-cp .env.example .env
-```
-
-# Commands
-
-`npm run <command>`
-
-| Command | Description                                            |
-|---------|--------------------------------------------------------|
-| dev     | You can use this command when developing your bot      |
-| start   | When you host/run your bot you should use this command |
+- [JellyCommands](https://github.com/ghostdevv/jellycommands)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Discord.js](https://discord.js.org)

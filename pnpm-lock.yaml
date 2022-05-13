@@ -28,6 +28,25 @@ importers:
       tsm: 2.2.1
       typescript: 4.6.4
 
+  packages/welcomer:
+    specifiers:
+      '@types/node': ^17.0.25
+      discord.js: ^13.6.0
+      dotenv: ^16.0.1
+      jellycommands: ^1.0.0-next.15
+      nodemon: ^2.0.15
+      tsm: ^2.2.1
+      typescript: ^4.6.3
+    dependencies:
+      discord.js: 13.6.0
+      dotenv: 16.0.1
+      jellycommands: 1.0.0-next.23
+      typescript: 4.6.4
+    devDependencies:
+      '@types/node': 17.0.33
+      nodemon: 2.0.16
+      tsm: 2.2.1
+
 packages:
 
   /@discordjs/builders/0.11.0:
@@ -101,6 +120,10 @@ packages:
 
   /@types/node/16.11.35:
     resolution: {integrity: sha512-QXu45LyepgnhUfnIAj/FyT4uM87ug5KpIrgXfQtUPNAlx8w5hmd8z8emqCLNvG11QkpRSCG9Qg2buMxvqfjfsQ==}
+
+  /@types/node/17.0.33:
+    resolution: {integrity: sha512-miWq2m2FiQZmaHfdZNcbpp9PuXg34W5JZ5CrJ/BaS70VuhoJENBEQybeiYSaPBRNq6KQGnjfEnc/F3PN++D+XQ==}
+    dev: true
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
@@ -372,6 +395,11 @@ packages:
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /duplexer3/0.1.4:
@@ -1330,7 +1358,6 @@ packages:
     resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /undefsafe/2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}

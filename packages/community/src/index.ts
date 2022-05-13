@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { JellyCommands } from 'jellycommands';
 import { Intents } from 'discord.js';
 import knex from './knex.js';
+import { join } from 'desm';
 
 const db = await knex();
 
@@ -10,8 +11,8 @@ const client = new JellyCommands({
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     },
 
-    commands: ['src/commands'],
-    events: 'src/events',
+    commands: join(import.meta.url, './src/commands'),
+    events: join(import.meta.url, './src/events'),
 
     props: {
         db,

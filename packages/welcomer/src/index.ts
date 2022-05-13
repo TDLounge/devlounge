@@ -1,9 +1,10 @@
 import 'dotenv/config';
 import { JellyCommands } from 'jellycommands';
 import { Intents } from 'discord.js';
+import { join } from 'desm';
 
 const client = new JellyCommands({
-    events: './src/events',
+    events: join(import.meta.url, './src/events'),
 
     clientOptions: {
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS],

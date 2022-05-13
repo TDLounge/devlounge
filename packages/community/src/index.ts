@@ -11,8 +11,8 @@ const client = new JellyCommands({
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     },
 
-    commands: join(import.meta.url, './src/commands'),
-    events: join(import.meta.url, './src/events'),
+    commands: join(import.meta.url, './commands'),
+    events: join(import.meta.url, './events'),
 
     props: {
         db,

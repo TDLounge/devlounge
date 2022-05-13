@@ -10,8 +10,8 @@ const client = new JellyCommands({
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     },
 
-    commands: ['dist/commands'],
-    events: 'dist/events',
+    commands: ['src/commands'],
+    events: 'src/events',
 
     props: {
         db,

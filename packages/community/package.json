@@ -3,18 +3,15 @@
     "version": "3.0.0",
     "private": true,
     "type": "module",
-    "main": "dist/index.js",
+    "main": "src/index.ts",
     "scripts": {
-        "dev": "rimraf dist && run-p dev:*",
-        "dev:tsc": "tsc -w --preserveWatchOutput",
-        "dev:nodemon": "nodemon .",
-        "build": "rimraf dist && tsc"
+		"dev": "nodemon --loader tsm .",
+		"start": "tsm ."
     },
     "devDependencies": {
         "@types/node": "^16.4.13",
-        "nodemon": "latest",
-        "npm-run-all": "^4.1.5",
-        "rimraf": "^3.0.2",
+        "nodemon": "^2.0.16",
+        "tsm": "^2.2.1",
         "typescript": "^4.3.5"
     },
     "dependencies": {

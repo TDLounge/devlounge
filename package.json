@@ -2,6 +2,7 @@
     "name": "@devlounge/monorepo",
     "private": true,
     "scripts": {
-        "community": "pnpm run dev -r --filter community"
+        "community": "pnpm run dev -r --filter community",
+        "welcomer": "pnpm run dev -r --filter welcomer"
     }
 }

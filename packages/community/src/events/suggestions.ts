@@ -6,6 +6,10 @@ export default event({
     name: 'messageCreate',
 
     run: async ({}, message) => {
+        if (message.partial) {
+            message = await message.fetch();
+        }
+
         if (message.author.bot) return;
         if (!suggestionChannelIds.includes(message.channel.id)) return;
 

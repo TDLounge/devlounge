@@ -9,6 +9,7 @@ const db = await knex();
 const client = new JellyCommands({
     clientOptions: {
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+        partials: ['MESSAGE', 'REACTION'],
     },
 
     commands: join(import.meta.url, './commands'),

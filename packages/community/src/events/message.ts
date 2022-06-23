@@ -11,6 +11,10 @@ export default event({
     name: 'messageCreate',
 
     run: async ({ client }, message) => {
+        if (message.partial) {
+            message = await message.fetch();
+        }
+
         if (message.author.bot) return;
 
         // prettier-ignore

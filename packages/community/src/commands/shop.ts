@@ -1,13 +1,6 @@
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
-interface ViewShopSchema {
-    id: number;
-    name: string;
-    price: number;
-    description: string;
-}
-
 export default command({
     name: 'shop',
     description: 'View and buy from the shop',
@@ -47,11 +40,7 @@ export default command({
             const id = interaction.options.getInteger('number', true);
 
             const item = await db('shop')
-                .select<{ name: string; price: number; role: string }>(
-                    'name',
-                    'price',
-                    'role',
-                )
+                .select('name', 'price', 'role')
                 .where({ id })
                 .first();
 
@@ -90,7 +79,7 @@ export default command({
                 });
 
             const user = await db('user')
-                .select<{ coins: number }>('coins')
+                .select('coins')
                 .where({ id: interaction.user.id })
                 .first();
 
@@ -120,7 +109,7 @@ export default command({
             });
         }
 
-        const items = await db('shop').select<ViewShopSchema[]>();
+        const items = await db('shop').select();
 
         interaction.followUp({
             embeds: [

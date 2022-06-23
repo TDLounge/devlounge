@@ -30,7 +30,7 @@ export default command({
         const recipient = interaction.options.getUser('recipient', true);
 
         const user = await db('user')
-            .select<{ coins: number }>('coins')
+            .select('coins')
             .where({ id: interaction.user.id })
             .first();
 
@@ -51,7 +51,7 @@ export default command({
             .where({ id: interaction.user.id });
 
         const recipientCoins = await db('user')
-            .select<{ coins: number }>('coins')
+            .select('coins')
             .where({ id: recipient.id })
             .first();
 

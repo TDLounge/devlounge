@@ -37,7 +37,7 @@ export default command({
             const name = interaction.options.getString('tag', true);
 
             const tag = await db('tag')
-                .select<{ content: string }>('content')
+                .select('content')
                 .where({ name })
                 .first();
 
@@ -64,9 +64,7 @@ export default command({
             });
         }
 
-        const tags = await db('tag').select<
-            { name: string; category: string }[]
-        >('name', 'category');
+        const tags = await db('tag').select('name', 'category');
 
         const fields: Record<string, string[]> = {};
 

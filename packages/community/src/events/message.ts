@@ -23,7 +23,7 @@ export default event({
         const db = client.props.get<Knex>('db');
 
         const user = await db('user')
-            .select<{ coins: number; xp: number }>('coins', 'xp')
+            .select('coins', 'xp')
             .where({ id: message.author.id })
             .first();
 

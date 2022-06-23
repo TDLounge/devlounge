@@ -1,5 +1,11 @@
 import { Knex } from 'knex';
 
+export interface UserTable {
+    id: string;
+    coins: number;
+    xp: number;
+}
+
 export default (db: Knex) =>
     db.schema.createTable('user', (table) => {
         table.string('id', 18).primary();

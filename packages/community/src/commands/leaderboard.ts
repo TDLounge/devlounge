@@ -13,12 +13,12 @@ export default command({
         const db = client.props.get<Knex>('db');
 
         const coinData = await db('user')
-            .select<[{ id: string; coins: number }]>('id', 'coins')
+            .select('id', 'coins')
             .limit(10)
             .orderBy('coins', 'desc');
 
         const xpData = await db('user')
-            .select<[{ id: string; xp: number }]>('id', 'xp')
+            .select('id', 'xp')
             .limit(10)
             .orderBy('xp', 'desc');
 

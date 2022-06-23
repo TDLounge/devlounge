@@ -5,7 +5,7 @@ const { version } = JSON.parse(readFileSync('package.json', 'utf-8'));
 
 const credits = `
 Created and founded by <@282839711834177537>
-All systems coded by <@282839711834177537> & <@724379828748550215>
+All systems coded by <@282839711834177537> & <@724379828748550215> - [Github](https://github.com/ghostdevv/devlounge)
 Logo and art made by <@787002534145294336>
 Shop & Tag system inspired by [Sourcebot](https://github.com/TheSourceCodeLLC/Source)
 

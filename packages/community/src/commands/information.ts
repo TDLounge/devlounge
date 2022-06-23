@@ -46,7 +46,7 @@ export default command({
                         },
                         {
                             name: 'Bot',
-                            value: `Version: ${version}`,
+                            value: `Version: ${version} | [Github](https://github.com/ghostdevv/devlounge)`,
                         },
                     ],
                     thumbnail: {

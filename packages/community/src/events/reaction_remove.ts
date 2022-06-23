@@ -17,7 +17,7 @@ export default event({
             .select('role_id')
             .where({
                 message_id: reaction.message.id,
-                emoji: reaction.emoji.name || '',
+                emoji: reaction.emoji.toString(),
             })
             .first();
 

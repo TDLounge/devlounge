@@ -1,4 +1,3 @@
-import { ReactionRoleTable } from '../db/reaction_roles';
 import { getMember } from '../utils/users';
 import { event } from 'jellycommands';
 import { Knex } from 'knex';
@@ -13,7 +12,7 @@ export default event({
 
         const db = client.props.get<Knex>('db');
 
-        const data = await db<ReactionRoleTable>('reaction_roles')
+        const data = await db('reaction_roles')
             .select('role_id')
             .where({
                 message_id: reaction.message.id,

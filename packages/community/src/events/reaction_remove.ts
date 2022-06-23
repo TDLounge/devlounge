@@ -1,4 +1,3 @@
-import { ReactionRoleTable } from '../db/reaction_roles';
 import { getMember } from '../utils/users';
 import { event } from 'jellycommands';
 import { Knex } from 'knex';

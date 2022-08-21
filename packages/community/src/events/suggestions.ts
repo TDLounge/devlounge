@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { event } from 'jellycommands';
 
 const suggestionChannelIds = ['767854644813627454'];
@@ -17,14 +18,13 @@ export default event({
 
         const suggestion = await message.channel.send({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    author: {
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setAuthor({
                         iconURL: message.author.avatarURL()!,
                         name: `Suggestion from ${message.author.username}`,
-                    },
-                    description: message.content,
-                },
+                    })
+                    .setDescription(message.content),
             ],
         });
 

@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 
 export default command({
@@ -9,10 +10,9 @@ export default command({
     run: ({ interaction }) =>
         interaction.reply({
             embeds: [
-                {
-                    description: ':ping_pong: Pong!',
-                    color: '#cf4a4a',
-                },
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setDescription(':ping_pong: Pong!'),
             ],
         }),
 });

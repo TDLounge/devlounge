@@ -11,13 +11,13 @@ export default command({
 
     options: [
         {
-            type: 'STRING',
+            type: 'String',
             name: 'message',
             description: 'The message id to create the reaction role on',
             required: true,
         },
         {
-            type: 'STRING',
+            type: 'String',
             name: 'emoji',
             description: 'The emoji to react with',
             required: true,

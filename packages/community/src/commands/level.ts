@@ -31,7 +31,14 @@ export default command({
             .where({ id: userId })
             .first();
 
-        console.log(user);
+        if (!user)
+            return void interaction.followUp({
+                embeds: [
+                    new EmbedBuilder()
+                        .setColor('#cf4a4a')
+                        .setDescription('Unable to find you'),
+                ],
+            });
 
         // prettier-ignore
         const description = `<@${userId}> ${userId == interaction.user.id ? 'you are' : 'is'} level ${toLevel(user.xp)}`;

@@ -23,7 +23,7 @@ export default command({
             required: true,
         },
         {
-            type: 'ROLE',
+            type: 'Role',
             name: 'role',
             description: 'The role to assign to the user',
             required: true,

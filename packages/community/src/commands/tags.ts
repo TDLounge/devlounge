@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -44,22 +45,18 @@ export default command({
             if (!tag)
                 return void interaction.followUp({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: `Unable to find tag: \`${name}\``,
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription(`Unable to find tag: \`${name}\``),
                     ],
                 });
 
             return void interaction.followUp({
                 embeds: [
-                    {
-                        color: '#cf4a4a',
-                        description: tag.content,
-                        footer: {
-                            text: `/tag ${name}`,
-                        },
-                    },
+                    new EmbedBuilder()
+                        .setColor('#cf4a4a')
+                        .setDescription(tag.content)
+                        .setFooter({ text: `/tag ${name}` }),
                 ],
             });
         }
@@ -75,14 +72,15 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    title: 'Tags',
-                    fields: Object.entries(fields).map(([name, value]) => ({
-                        name,
-                        value: value.map((x) => `\`${x}\``).join(', '),
-                    })),
-                },
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setTitle('Tags')
+                    .setFields(
+                        Object.entries(fields).map(([name, value]) => ({
+                            name,
+                            value: value.map((x) => `\`${x}\``).join(', '),
+                        })),
+                    ),
             ],
         });
     },

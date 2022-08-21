@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -20,7 +21,7 @@ export default command({
                 {
                     name: 'number',
                     description: 'The number (id) of the item',
-                    type: 'INTEGER',
+                    type: 'Integer',
                     required: true,
                 },
             ],
@@ -47,10 +48,11 @@ export default command({
             if (!item)
                 return void interaction.followUp({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: "That item doesn't exist in the shop",
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription(
+                                "That item doesn't exist in the shop",
+                            ),
                     ],
                 });
 
@@ -61,20 +63,20 @@ export default command({
             if (!member)
                 return void interaction.followUp({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: 'Unable to find you',
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription('Unable to find you'),
                     ],
                 });
 
             if (member.roles.cache.has(item.role))
                 return void interaction.followUp({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: 'You already purchased this item',
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription(
+                                `You already have the ${item.name} role`,
+                            ),
                     ],
                 });
 
@@ -86,10 +88,11 @@ export default command({
             if (!user || (user?.coins || 0) < item.price)
                 return void interaction.followUp({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: "You can't afford that item",
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription(
+                                `You need ${item.price} coins to buy this item`,
+                            ),
                     ],
                 });
 
@@ -101,10 +104,11 @@ export default command({
 
             return void interaction.followUp({
                 embeds: [
-                    {
-                        color: '#cf4a4a',
-                        description: `You bought ${item.name} for ${item.price} coins`,
-                    },
+                    new EmbedBuilder()
+                        .setColor('#cf4a4a')
+                        .setDescription(
+                            `You bought the ${item.name} for ${item.price} coins`,
+                        ),
                 ],
             });
         }
@@ -113,17 +117,18 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    title: 'Welcome to the shop!',
-                    description:
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setTitle('Welcome to the shop!')
+                    .setDescription(
                         'To buy from the shop use `/shop buy <number>`',
-
-                    fields: items.map((item) => ({
-                        name: `${item.id}) ${item.name} - ${item.price} coins`,
-                        value: item.description,
-                    })),
-                },
+                    )
+                    .setFields(
+                        items.map((item) => ({
+                            name: `${item.id}) ${item.name} - ${item.price} coins`,
+                            value: item.description,
+                        })),
+                    ),
             ],
         });
     },

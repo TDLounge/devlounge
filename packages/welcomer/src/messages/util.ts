@@ -16,7 +16,7 @@ export const getChannel = async (guild: Guild) => {
     const channel = await guild.channels.fetch(channel_id);
 
     if (!channel) return console.error('Unable to find welcome channel');
-    if (!channel?.isText()) return console.error('Channel is not text');
+    if (!channel?.isTextBased()) return console.error('Channel is not text');
 
     return channel;
 };

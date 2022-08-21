@@ -1,6 +1,6 @@
 import { getChannel, getMessage } from '../messages/util';
 import { joinMessages } from '../messages/messages';
-import { MessageEmbed } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { event } from 'jellycommands';
 
 export default event({
@@ -15,10 +15,9 @@ export default event({
         channel.send({
             content: member.toString(),
             embeds: [
-                new MessageEmbed({
-                    color: '#7de062',
-                    description: getMessage(member.user, joinMessages),
-                }),
+                new EmbedBuilder()
+                    .setDescription(getMessage(member.user, joinMessages))
+                    .setColor('#7de062'),
             ],
         });
     },

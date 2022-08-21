@@ -1,15 +1,18 @@
 import 'dotenv/config';
 import { JellyCommands } from 'jellycommands';
-import { Intents } from 'discord.js';
+import { IntentsBitField, Partials } from 'discord.js';
 import { join } from 'desm';
 
 const client = new JellyCommands({
     events: join(import.meta.url, './events'),
 
     clientOptions: {
-        intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS],
+        intents: [
+            IntentsBitField.Flags.Guilds,
+            IntentsBitField.Flags.GuildMembers,
+        ],
 
-        partials: ['GUILD_MEMBER'],
+        partials: [Partials.GuildMember],
     },
 });
 

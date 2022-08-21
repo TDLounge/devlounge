@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -9,13 +10,13 @@ export default command({
         {
             name: 'amount',
             description: 'Amount to send',
-            type: 'INTEGER',
+            type: 'Integer',
             required: true,
         },
         {
             name: 'recipient',
             description: 'User to send coins to',
-            type: 'USER',
+            type: 'User',
             required: true,
         },
     ],
@@ -39,10 +40,9 @@ export default command({
         if (!user || currentCoins < amount)
             return void interaction.followUp({
                 embeds: [
-                    {
-                        color: '#cf4a4a',
-                        description: `You don't have enough coins`,
-                    },
+                    new EmbedBuilder()
+                        .setColor('#cf4a4a')
+                        .setDescription("You don't have enough coins"),
                 ],
             });
 
@@ -65,10 +65,11 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    description: `${recipient.toString()} was sent ${amount} coins`,
-                },
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setDescription(
+                        `${recipient.toString()} was sent ${amount} coins`,
+                    ),
             ],
         });
     },

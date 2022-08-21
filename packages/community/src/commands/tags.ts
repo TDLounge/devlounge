@@ -9,17 +9,17 @@ export default command({
         {
             name: 'view',
             description: 'View all the tags',
-            type: 'SUB_COMMAND',
+            type: 'Subcommand',
         },
         {
             name: 'get',
             description: 'Get a tag by name',
-            type: 'SUB_COMMAND',
+            type: 'Subcommand',
             options: [
                 {
                     name: 'tag',
                     description: 'the tag',
-                    type: 'STRING',
+                    type: 'String',
                     required: true,
                 },
             ],

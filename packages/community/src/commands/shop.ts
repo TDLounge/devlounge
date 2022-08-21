@@ -9,12 +9,12 @@ export default command({
         {
             name: 'view',
             description: 'View all items for sale',
-            type: 'SUB_COMMAND',
+            type: 'Subcommand',
         },
         {
             name: 'buy',
             description: 'Buy an item from the shop',
-            type: 'SUB_COMMAND',
+            type: 'Subcommand',
 
             options: [
                 {

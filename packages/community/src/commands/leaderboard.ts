@@ -1,4 +1,5 @@
 import { toLevel } from '../utils/levels.js';
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -33,16 +34,13 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    fields: [
-                        {
-                            name: 'Coins Leaderboard',
-                            value: coinBoard.join('\n'),
-                        },
-                        { name: 'XP Leaderboard', value: xpBoard.join('\n') },
-                    ],
-                },
+                new EmbedBuilder().setColor('#cf4a4a').setFields([
+                    {
+                        name: 'Coins Leaderboard',
+                        value: coinBoard.join('\n'),
+                    },
+                    { name: 'XP Leaderboard', value: xpBoard.join('\n') },
+                ]),
             ],
         });
     },

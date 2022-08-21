@@ -1,5 +1,6 @@
 import { command } from 'jellycommands';
 import { readFileSync } from 'fs';
+import { EmbedBuilder } from 'discord.js';
 
 const { version } = JSON.parse(readFileSync('package.json', 'utf-8'));
 
@@ -21,11 +22,10 @@ export default command({
     run: async ({ interaction }) =>
         interaction.reply({
             embeds: [
-                {
-                    title: 'Credits',
-                    color: '#cf4a4a',
-                    description: credits.trim(),
-                },
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setTitle('Credits')
+                    .setDescription(credits.trim()),
             ],
         }),
 });

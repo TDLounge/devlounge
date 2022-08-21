@@ -1,3 +1,4 @@
+import { EmbedBuilder } from 'discord.js';
 import { command } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -9,7 +10,7 @@ export default command({
         {
             name: 'user',
             description: 'The user whos coins you want to check',
-            type: 'USER',
+            type: 'User',
             required: false,
         },
     ],
@@ -33,10 +34,9 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    color: '#cf4a4a',
-                    description,
-                },
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setDescription(description),
             ],
         });
     },

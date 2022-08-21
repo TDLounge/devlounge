@@ -1,6 +1,6 @@
 import 'dotenv/config';
+import { IntentsBitField, Partials } from 'discord.js';
 import { JellyCommands } from 'jellycommands';
-import { Intents } from 'discord.js';
 import knex from './knex.js';
 import { join } from 'desm';
 
@@ -9,12 +9,12 @@ const db = await knex();
 const client = new JellyCommands({
     clientOptions: {
         intents: [
-            Intents.FLAGS.GUILDS,
-            Intents.FLAGS.GUILD_MESSAGES,
-            Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+            IntentsBitField.Flags.Guilds,
+            IntentsBitField.Flags.GuildMessages,
+            IntentsBitField.Flags.GuildMessageReactions,
         ],
 
-        partials: ['MESSAGE', 'REACTION'],
+        partials: [Partials.Message, Partials.Reaction],
     },
 
     commands: join(import.meta.url, './commands'),

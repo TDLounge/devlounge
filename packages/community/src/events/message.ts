@@ -1,4 +1,5 @@
 import { toLevel } from '../utils/levels.js';
+import { EmbedBuilder } from 'discord.js';
 import { event } from 'jellycommands';
 import { Knex } from 'knex';
 
@@ -41,10 +42,11 @@ export default event({
             if (newLevel > currentLevel) {
                 message.reply({
                     embeds: [
-                        {
-                            color: '#cf4a4a',
-                            description: `${message.author.toString()} is now level ${newLevel}!`,
-                        },
+                        new EmbedBuilder()
+                            .setColor('#cf4a4a')
+                            .setDescription(
+                                `${message.author.toString()} is now level ${newLevel}!`,
+                            ),
                     ],
                 });
             }

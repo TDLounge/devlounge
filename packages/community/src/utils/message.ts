@@ -7,7 +7,7 @@ export const getMessage = async (
 ) => {
     try {
         const channel = await client.channels.fetch(channelId);
-        if (!channel || !channel.isText()) return null;
+        if (!channel || !channel.isTextBased()) return null;
 
         const message = await channel.messages.fetch(messageId);
         if (!message) return null;

@@ -1,5 +1,5 @@
+import { EmbedBuilder, Guild } from 'discord.js';
 import { command } from 'jellycommands';
-import type { Guild } from 'discord.js';
 import { readFileSync } from 'fs';
 
 const { version } = JSON.parse(readFileSync('package.json', 'utf-8'));
@@ -24,10 +24,11 @@ export default command({
 
         interaction.followUp({
             embeds: [
-                {
-                    title: 'The Dev Lounge Information',
-                    color: '#cf4a4a',
-                    fields: [
+                new EmbedBuilder()
+                    .setColor('#cf4a4a')
+                    .setTitle('The Dev Lounge Information')
+                    .setThumbnail(guild.iconURL() || null)
+                    .setFields([
                         {
                             name: 'Member information',
                             value: `Total members: ${guild.memberCount}`,
@@ -48,11 +49,7 @@ export default command({
                             name: 'Bot',
                             value: `Version: ${version} | [Github](https://github.com/ghostdevv/devlounge)`,
                         },
-                    ],
-                    thumbnail: {
-                        url: guild.iconURL() || '',
-                    },
-                },
+                    ]),
             ],
         });
     },

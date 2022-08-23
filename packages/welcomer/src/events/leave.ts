@@ -14,7 +14,7 @@ export default event({
             embeds: [
                 new EmbedBuilder()
                     .setDescription(getMessage(member.user, leaveMessages))
-                    .setColor('#7de062'),
+                    .setColor('#e06262'),
             ],
         });
     },

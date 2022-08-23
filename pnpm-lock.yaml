@@ -7,11 +7,11 @@ importers:
 
   packages/community:
     specifiers:
-      '@types/node': ^18.7.9
+      '@types/node': ^18.7.11
       desm: ^1.3.0
       discord.js: ^14.3.0
       dotenv: ^16.0.1
-      jellycommands: 1.0.0-next.34
+      jellycommands: 1.0.0-next.36
       knex: ^2.2.0
       mysql: ^2.18.1
       nodemon: ^2.0.19
@@ -21,22 +21,22 @@ importers:
       desm: 1.3.0
       discord.js: 14.3.0
       dotenv: 16.0.1
-      jellycommands: 1.0.0-next.34_discord.js@14.3.0
+      jellycommands: 1.0.0-next.36_discord.js@14.3.0
       knex: 2.2.0_mysql@2.18.1
       mysql: 2.18.1
     devDependencies:
-      '@types/node': 18.7.9
+      '@types/node': 18.7.11
       nodemon: 2.0.19
       tsm: 2.2.2
       typescript: 4.7.4
 
   packages/welcomer:
     specifiers:
-      '@types/node': ^18.7.9
+      '@types/node': ^18.7.11
       desm: ^1.3.0
       discord.js: ^14.3.0
       dotenv: ^16.0.1
-      jellycommands: 1.0.0-next.34
+      jellycommands: 1.0.0-next.36
       nodemon: ^2.0.19
       tsm: ^2.2.2
       typescript: ^4.7.4
@@ -44,10 +44,10 @@ importers:
       desm: 1.3.0
       discord.js: 14.3.0
       dotenv: 16.0.1
-      jellycommands: 1.0.0-next.34_discord.js@14.3.0
+      jellycommands: 1.0.0-next.36_discord.js@14.3.0
       typescript: 4.7.4
     devDependencies:
-      '@types/node': 18.7.9
+      '@types/node': 18.7.11
       nodemon: 2.0.19
       tsm: 2.2.2
 
@@ -58,7 +58,7 @@ packages:
     engines: {node: '>=16.9.0'}
     dependencies:
       '@sapphire/shapeshift': 3.5.1
-      discord-api-types: 0.37.3
+      discord-api-types: 0.37.4
       fast-deep-equal: 3.1.3
       ts-mixer: 6.0.1
       tslib: 2.4.0
@@ -76,10 +76,10 @@ packages:
       '@discordjs/collection': 1.1.0
       '@sapphire/async-queue': 1.5.0
       '@sapphire/snowflake': 3.2.2
-      discord-api-types: 0.37.3
+      discord-api-types: 0.37.4
       file-type: 17.1.6
       tslib: 2.4.0
-      undici: 5.9.1
+      undici: 5.10.0
     dev: false
 
   /@esbuild/linux-loong64/0.14.54:
@@ -137,13 +137,13 @@ packages:
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
     dev: false
 
-  /@types/node/18.7.9:
-    resolution: {integrity: sha512-0N5Y1XAdcl865nDdjbO0m3T6FdmQ4ijE89/urOHLREyTXbpMWbSafx9y7XIsgWGtwUP2iYTinLyyW3FatAxBLQ==}
+  /@types/node/18.7.11:
+    resolution: {integrity: sha512-KZhFpSLlmK/sdocfSAjqPETTMd0ug6HIMIAwkwUpU79olnZdQtMxpQP+G1wDzCH7na+FltSIhbaZuKdwZ8RDrw==}
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
     dependencies:
-      '@types/node': 18.7.9
+      '@types/node': 18.7.11
     dev: false
 
   /abbrev/1.1.1:
@@ -270,8 +270,8 @@ packages:
     resolution: {integrity: sha512-RvlHN2gfYA0BpCfjpWzCdQeR6p5U+84f5DzcirLow86UA/OcpwuOqXRC4Oz0bG9rzcJPVtMT6ZgNtjp4qh+uqA==}
     dev: false
 
-  /discord-api-types/0.37.3:
-    resolution: {integrity: sha512-LWcx1jDL8zanQJOPwNmHdFQTr/PFflDw1VYoRmTjme7LEKLr2Qqa2uz04gjN0eNEYskM2TYkOvNn3H5rblFM6g==}
+  /discord-api-types/0.37.4:
+    resolution: {integrity: sha512-QgqYlUokWM++hdwvAtgVNLjmFumPBzFy+uWnnfVDiwBXKm+5jXHJPk2lx2eilkv/706UpAJPLSk/uVCY9NocjA==}
     dev: false
 
   /discord.js/14.3.0:
@@ -283,11 +283,11 @@ packages:
       '@discordjs/rest': 1.1.0
       '@sapphire/snowflake': 3.2.2
       '@types/ws': 8.5.3
-      discord-api-types: 0.37.3
+      discord-api-types: 0.37.4
       fast-deep-equal: 3.1.3
       lodash.snakecase: 4.1.1
       tslib: 2.4.0
-      undici: 5.9.1
+      undici: 5.10.0
       ws: 8.8.1
     transitivePeerDependencies:
       - bufferutil
@@ -652,13 +652,13 @@ packages:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
     dev: false
 
-  /jellycommands/1.0.0-next.34_discord.js@14.3.0:
-    resolution: {integrity: sha512-h8uX5gLbvz58w5N9LNXpKIQOe7Hny0+IcThcYZlVqP5u04U+Nkd4vVjFluBWIRieVdzgP2vW9tHEZoYNxt6low==}
+  /jellycommands/1.0.0-next.36_discord.js@14.3.0:
+    resolution: {integrity: sha512-qrbPrCgQeDTuQPiCmYRQ3UKSWqgm8vzbHapHmHVgkx1yEPIYerMZFIAJuXmP3+MSfmGWACdZLemqVbVqdGmwvg==}
     peerDependencies:
       discord.js: ^14.0.0
     dependencies:
       axios: 0.27.2
-      discord-api-types: 0.37.3
+      discord-api-types: 0.37.4
       discord.js: 14.3.0
       ghoststools: 0.6.3
       joi: 17.6.0
@@ -909,7 +909,7 @@ packages:
     dev: true
 
   /sqlstring/2.3.1:
-    resolution: {integrity: sha1-R1OT/56RR5rqYtyvDKPRSYOn+0A=}
+    resolution: {integrity: sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==}
     engines: {node: '>= 0.6'}
     dev: false
 
@@ -1002,8 +1002,8 @@ packages:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
     dev: true
 
-  /undici/5.9.1:
-    resolution: {integrity: sha512-6fB3a+SNnWEm4CJbgo0/CWR8RGcOCQP68SF4X0mxtYTq2VNN8T88NYrWVBAeSX+zb7bny2dx2iYhP3XHi00omg==}
+  /undici/5.10.0:
+    resolution: {integrity: sha512-c8HsD3IbwmjjbLvoZuRI26TZic+TSEe8FPMLLOkN1AfYRhdjnKBU6yL+IwcSCbdZiX4e5t0lfMDLDCqj4Sq70g==}
     engines: {node: '>=12.18'}
     dev: false
 
